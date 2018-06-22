@@ -16,4 +16,4 @@ With this resource players can fly from **Los Santos International Airport** to 
 4. (re)start your server.
 
 ## Changelog
-You can find the changelog [here](https://github.com/FiveM-Scripts/airports/CHANGELOG.md).
+You can find the changelog [here](https://github.com/FiveM-Scripts/airports/blob/master/CHANGELOG.md).

@@ -1,3 +1,7 @@
+## 1.1
+
+- Essentialmode isn't required by default, server admins can enable this option in **config.lua**.
+
 ## 1.0
 
 - Added support for NativeUILua.

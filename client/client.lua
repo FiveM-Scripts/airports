@@ -58,12 +58,13 @@ Citizen.CreateThread(function()
 		end
 
 		if not IsEntityInZone(PlayerPedId(), startZone) then
-			if not IsEntityInAir(AirPlane) and IsPedInAnyPlane(PlayerPedId()) then
+			if not IsEntityInAir(AirPlane) and IsPedInVehicle(PlayerPedId(), AirPlane, false) then
 				TaskVehicleTempAction(pilot, Airplane, 27, -1)
 				SetVehicleHandbrake(AirPlane, true)
 
 				if GetEntitySpeed(AirPlaine) == 0.0 then
 					if IsEntityInZone(PlayerPedId(), "AIRP") then
+						Wait(500)
 						DoScreenFadeOut(200)
 						while not IsScreenFadedOut() do
 							Citizen.Wait(0)
@@ -71,7 +72,7 @@ Citizen.CreateThread(function()
 
 						SetEntityCoords(PlayerPedId(), -1042.0395, -2740.7780, 20.1692)
 						SetEntityHeading(PlayerPedId(), 340.2285)
-						Citizen.Wait(500)
+						Wait(800)
 						DoScreenFadeIn(500)
 					else
 						TaskLeaveVehicle(PlayerPedId(), AirPlane, 0)

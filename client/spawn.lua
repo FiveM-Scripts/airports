@@ -36,7 +36,7 @@ function CreatePlane(x, y, z, heading, destination)
 		AirPlane = CreateVehicle(modelHash, x, y, z-1.0, heading, true, false)
 		SetVehicleOnGroundProperly(AirPlane)
 		SetVehicleEngineOn(AirPlane, true, true, true)
-		SetEntityProofs(PlayerPedId(), true, true, true, true, true, true, true, false)
+		SetEntityProofs(AirPlane, true, true, true, true, true, true, true, false)
 		SetVehicleHasBeenOwnedByPlayer(AirPlane, true)
 
 		pilot = CreatePedInsideVehicle(AirPlane, 6, pilotModel, -1, true, false)

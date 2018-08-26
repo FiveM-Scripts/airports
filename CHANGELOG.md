@@ -1,9 +1,10 @@
-## 1.1
+## 1.2
+- Fixed the conflict where players would always spawn at the LSIA enterance when using any plane in the airport zone.
 
+## 1.1
 - Essentialmode isn't required by default, server admins can enable this option in **config.lua**.
 
 ## 1.0
-
 - Added support for NativeUILua.
 - Added support for EssentialMode.
 - Added blips for **Los Santos International Airport** and **Sandy Shores Airfield.**

@@ -1,5 +1,5 @@
 ## 1.2
-- Fixed the conflict where players would always spawn at the LSIA enterance when using any plane in the airport zone.
+- Fixed the conflict where players would always spawn at the LSIA entrance when using any plane in the airport zone.
 - Fixed the conflict where players could not get killed by pedestrians or other players after leaving the plane.
 
 ## 1.1

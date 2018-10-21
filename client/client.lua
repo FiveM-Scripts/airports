@@ -32,9 +32,9 @@ Citizen.CreateThread(function()
 				end
 			end
 		else
-				if  _menuPool:IsAnyMenuOpen() then
-					mainMenu:Visible(not mainMenu:Visible())
-				end				
+			if  _menuPool:IsAnyMenuOpen() then
+				mainMenu:Visible(not mainMenu:Visible())
+			end				
 		end
 
 		if not landing then

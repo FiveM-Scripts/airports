@@ -25,8 +25,7 @@ local function CreateAirportBlips()
 		SetBlipSprite(blip, 90)
 		SetBlipAsShortRange(blip, true)
 
-		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString("Airport")
+		BeginTextCommandSetBlipName("BLIP_90")
 		EndTextCommandSetBlipName(blip)
 	end
 end
@@ -45,7 +44,7 @@ function IsPlayerNearAirport()
 			if not _menuPool:IsAnyMenuOpen() then
 				if not IsHelpMessageBeingDisplayed() then
 					BeginTextCommandDisplayHelp("STRING")
-					AddTextComponentSubstringPlayerName("Press ~INPUT_CONTEXT~ to travel.")
+					AddTextComponentSubstringPlayerName(GetLabelText("MATC_DPADRIGHT"))
 					EndTextCommandDisplayHelp(0, 0, 1, -1)
 				end
 			else

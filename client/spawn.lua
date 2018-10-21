@@ -69,6 +69,7 @@ end
 
 RegisterNetEvent("airports:departure")
 AddEventHandler("airports:departure",  function(x, y, z, heading, planeDest)
+	ClearAllHelpMessages()
 	CreatePlane(x, y, z, heading, planeDest)
 end)
 

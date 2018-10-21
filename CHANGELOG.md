@@ -1,3 +1,6 @@
+## 1.3
+- Added support for [venomous-freemode](https://github.com/FiveM-Scripts/venomous-freemode)
+
 ## 1.2
 - Fixed the conflict where players would always spawn at the LSIA entrance when using any plane in the airport zone.
 - Fixed the conflict where players could not get killed by pedestrians or other players after leaving the plane.

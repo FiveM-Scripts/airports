@@ -28,7 +28,7 @@ function ShowNotification(text)
 end
 
 function AddAirPortMenu(menu)
-	if config.use_essentialmode then
+	if config.use_essentialmode or config.use_venomous then
 		SantonsButton = NativeUI.CreateItem("Los Santos International Airport", "Buy a ticket for "..config.moneyCurrency .." " ..config.ticketPrice)
 		DesrtButton = NativeUI.CreateItem("Sandy Shores Airfield", "Buy a ticket for "..config.moneyCurrency .." " ..config.ticketPrice)
 	else
@@ -43,7 +43,7 @@ function AddAirPortMenu(menu)
         	if not IsEntityInZone(PlayerPedId(), "DESRT") then
         		startZone = "AIRP"
         		planeDest = "DESRT"
-        		if config.use_essentialmode then
+        		if config.use_essentialmode or config.use_venomous then
         			TriggerServerEvent('airports:payTicket', -1675.2446, -2798.8835, 14.5409, 327.8560, planeDest, config.ticketPrice)
         		else
         			CreatePlane(-1675.2446, -2798.8835, 14.5409, 327.8560, planeDest)

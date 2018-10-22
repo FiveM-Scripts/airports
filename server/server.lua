@@ -43,27 +43,29 @@ end
 
 RegisterServerEvent("airports:payTicket")
 AddEventHandler("airports:payTicket", function(x, y, z, heading, destination, price)
+	local src = source
+
 	if config.use_essentialmode then
-		TriggerEvent("es:getPlayerFromId", tonumber(source), function(user)
+		TriggerEvent("es:getPlayerFromId", tonumber(src), function(user)
 			RconPrint('using Essentialmode')
 
 			if user.getMoney() >= tonumber(price) then
 				user.removeMoney(tonumber(price))
-				TriggerClientEvent("airports:departure", tonumber(source), x, y, z, heading, destination)
+				TriggerClientEvent("airports:departure", tonumber(src), x, y, z, heading, destination)
 			elseif user.getBank() >= tonumber(price) then
 				user.removeBank(tonumber(price))
-				TriggerClientEvent("airports:departure", tonumber(source), x, y, z, heading, destination)
+				TriggerClientEvent("airports:departure", tonumber(src), x, y, z, heading, destination)
 			else
-				TriggerClientEvent("airports:moneyInvalid", tonumber(source))
+				TriggerClientEvent("airports:moneyInvalid", tonumber(src))
 			end
 		end)
 	elseif config.use_venomous then
-		TriggerEvent('vf_base:FindPlayer', source, function(user)
+		TriggerEvent('vf_base:FindPlayer', src, function(user)
 			if user.cash >= tonumber(price) then
-				TriggerEvent('vf_base:ClearCash', source, tonumber(price))
-				TriggerClientEvent("airports:departure", tonumber(source), x, y, z, heading, destination)
+				TriggerEvent('vf_base:ClearCash', src, tonumber(price))
+				TriggerClientEvent("airports:departure", tonumber(src), x, y, z, heading, destination)
 			else
-				TriggerClientEvent("airports:moneyInvalid", tonumber(source))
+				TriggerClientEvent("airports:moneyInvalid", tonumber(src))
 			end
 		end)			
 	end		

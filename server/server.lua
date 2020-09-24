@@ -1,6 +1,6 @@
 --[[
             FiveM Airports
-            Copyright (C) 2018 FiveM-Scripts
+            Copyright (C) 2018-2020 FiveM-Scripts
               
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
@@ -13,33 +13,6 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this resource in the file "LICENSE". If not, see <http://www.gnu.org/licenses/>.
 ]]
-
-if GetCurrentResourceName() == 'airports' then
-	version = GetResourceMetadata(GetCurrentResourceName(), 'resource_version', 0)
-	PerformHttpRequest("https://updates.fivem-scripts.org/verify/airports", function(err, rData, headers)
-		if err == 404 then
-			RconPrint("\n----------------------------------------------------")
-			RconPrint("\nUPDATE ERROR: your version from FiveM Airports could not be verified.\n")
-			RconPrint("If you keep receiving this error then please contact FiveM-Scripts.")
-			RconPrint("\n----------------------------------------------------")
-		else
-			local vData = json.decode(rData)
-			if vData then
-				stableV = vData.version
-				if vData.version < version or vData.version > version then
-					RconPrint("\n----------------------------------------------------\n")
-					RconPrint("You are running a outdated version of FiveM Airports.\nPlease update to the most recent version: " .. vData.version)
-					RconPrint("\n----------------------------------------------------\n")
-				end
-			else
-				RconPrint("\n----------------------------------------------------------------------")
-				RconPrint("\nUPDATE ERROR: your version from FiveM Airports could not be verified.\n")
-				RconPrint("If you keep receiving this error then please contact FiveM-Scripts.")
-				RconPrint("\n----------------------------------------------------------------------\n")
-			end
-		end
-	end)
-end
 
 RegisterServerEvent("airports:payTicket")
 AddEventHandler("airports:payTicket", function(x, y, z, heading, destination, price)
